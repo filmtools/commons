@@ -1,0 +1,41 @@
+{
+  "name": "filmtools/commons",
+  "type": "library",
+
+  "description": "Classes, interfaces and factories for common film-related tasks.",
+
+  "license": "MIT",
+
+  "authors": [
+    {
+      "name":  "Carsten Witt",
+      "role":  "Author"
+    }
+  ],
+
+  "autoload": {
+    "psr-4": {
+      "FilmTools\\Commons\\": "src/"
+    }
+  },
+
+  "autoload-dev": {
+    "psr-4": {
+      "tests\\": "tests/src"
+    }
+  },
+
+  "require": {
+    "php": "^7.0"
+  },
+
+  "require-dev": {
+    "php-coveralls/php-coveralls": "^2.0",
+    "phpunit/phpunit": "^6.0"
+  },
+
+  "scripts": {
+    "test": "phpunit"
+  }
+
+}
