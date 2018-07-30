@@ -19,6 +19,19 @@ class DensitiesTest extends \PHPUnit\Framework\TestCase
     }
 
 
+    /**
+     * @dataProvider provideValidCtorArguments
+     */
+    public function testDensitiesProviderInterface( $data, $min, $max )
+    {
+        $sut = new Densities( $data );
+        $this->assertInstanceOf( DensitiesProviderInterface::class, $sut );
+
+        $densities = $sut->getDensities();
+        $this->assertInstanceOf( DensitiesInterface::class, $densities );
+    }
+
+
     public function provideValidCtorArguments()
     {
         $raw = array(

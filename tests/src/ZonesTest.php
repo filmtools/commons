@@ -24,6 +24,18 @@ class ZonesTest extends \PHPUnit\Framework\TestCase
     /**
      * @dataProvider provideValidCtorArguments
      */
+    public function testZonesProviderInterface( $data, $min, $max )
+    {
+        $sut = new Zones( $data );
+        $this->assertInstanceOf( ZonesProviderInterface::class, $sut );
+
+        $zones = $sut->getZones();
+        $this->assertInstanceOf( ZonesInterface::class, $zones );
+    }
+
+    /**
+     * @dataProvider provideValidCtorArguments
+     */
     public function testExposuresProviderInterface( $data, $min, $max )
     {
         $sut = new Zones( $data );
