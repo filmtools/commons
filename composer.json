@@ -2,7 +2,7 @@
   "name": "filmtools/commons",
   "type": "library",
 
-  "description": "Classes, interfaces and factories for common film-related tasks.",
+  "description": "Interfaces, classes and factories for photographic densities, exposure values, and zone numbers",
 
   "license": "MIT",
 
