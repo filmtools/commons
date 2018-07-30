@@ -15,6 +15,15 @@ class Zones extends MinMaxArrayIterator implements ZonesInterface, ZonesProvider
 
     /**
      * @inheritDoc
+     */
+    public function search( float $zone )
+    {
+        return array_search($zone, $this->getArrayCopy());
+    }
+
+
+    /**
+     * @inheritDoc
      * @return Exposures
      */
     public function getExposures() : ExposuresInterface

@@ -13,4 +13,12 @@ class Exposures extends MinMaxArrayIterator implements ExposuresInterface, Expos
         return $this;
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function search( float $logH )
+    {
+        return array_search($logH, $this->getArrayCopy());
+    }
+
 }
