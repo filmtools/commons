@@ -24,6 +24,17 @@ class ZonesTest extends \PHPUnit\Framework\TestCase
     /**
      * @dataProvider provideValidCtorArguments
      */
+    public function testSearchableInterface( $data, $min, $max )
+    {
+        $sut = new Zones( $data );
+        $this->assertTrue( $sut->search($min) !== false);
+        $this->assertTrue( $sut->search($max) !== false);
+        $this->assertFalse( $sut->search( 999 ));
+    }
+
+    /**
+     * @dataProvider provideValidCtorArguments
+     */
     public function testZonesProviderInterface( $data, $min, $max )
     {
         $sut = new Zones( $data );
