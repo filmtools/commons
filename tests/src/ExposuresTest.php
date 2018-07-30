@@ -19,6 +19,19 @@ class ExposuresTest extends \PHPUnit\Framework\TestCase
     }
 
 
+    /**
+     * @dataProvider provideValidCtorArguments
+     */
+    public function testExposuresProviderInterface( $data, $min, $max )
+    {
+        $sut = new Exposures( $data );
+        $this->assertInstanceOf( ExposuresProviderInterface::class, $sut );
+
+        $exposures = $sut->getExposures();
+        $this->assertInstanceOf( ExposuresInterface::class, $exposures );
+    }
+
+
     public function provideValidCtorArguments()
     {
         $raw = array(
