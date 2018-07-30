@@ -1,7 +1,8 @@
 <?php
 namespace FilmTools\Commons;
 
-interface ZonesInterface extends MinMaxInterface, ExposuresProviderInterface
+
+interface ZonesInterface extends MinMaxInterface, ExposuresProviderInterface, SearchableInterface
 {
 
 }
