@@ -12,4 +12,13 @@ class Densities extends MinMaxArrayIterator implements DensitiesInterface, Densi
     {
         return $this;
     }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function search( float $logD )
+    {
+        return array_search($logD, $this->getArrayCopy());
+    }
 }
