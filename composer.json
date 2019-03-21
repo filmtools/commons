@@ -19,23 +19,25 @@
     }
   },
 
-  "autoload-dev": {
-    "psr-4": {
-      "tests\\": "tests/src"
-    }
-  },
-
   "require": {
     "php": "^7.0"
   },
 
+	"autoload-dev": {
+	  	"psr-4": { "tests\\": "tests/src" }
+	},
+
   "require-dev": {
-    "php-coveralls/php-coveralls": "^2.0",
-    "phpunit/phpunit": "^6.0"
+      "php-coveralls/php-coveralls": "^2.0",
+      "phpunit/phpunit": "^5.7|^6.0|^7.0",
+      "spatie/phpunit-watcher": "^1.8"
   },
 
   "scripts": {
-    "test": "phpunit"
+        "phpunit": "phpunit --colors=auto",
+        "watch": "phpunit-watcher watch",
+        "test": [
+            "@phpunit"
+        ]
   }
-
 }
