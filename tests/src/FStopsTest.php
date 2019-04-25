@@ -41,9 +41,11 @@ class FStopsTest extends \PHPUnit\Framework\TestCase
     {
         $sut = new FStops( $data );
         $this->assertInstanceOf( ZonesProviderInterface::class, $sut );
+        $this->assertEquals( $min, $sut->min() );
 
         $zones = $sut->getZones();
         $this->assertInstanceOf( ZonesInterface::class, $zones );
+        $this->assertEquals( 0, $zones->min() );
     }
 
     /**
@@ -53,9 +55,11 @@ class FStopsTest extends \PHPUnit\Framework\TestCase
     {
         $sut = new FStops( $data );
         $this->assertInstanceOf( ExposuresProviderInterface::class, $sut );
+        $this->assertEquals( $min, $sut->min() );
 
         $exposures = $sut->getExposures();
         $this->assertInstanceOf( ExposuresInterface::class, $exposures );
+        $this->assertEquals( 0, $exposures->min() );
     }
 
 
@@ -63,9 +67,11 @@ class FStopsTest extends \PHPUnit\Framework\TestCase
     public function provideValidCtorArguments()
     {
         $raw = array(
-            0.01 => 0.1,
-            0.02 => 0.2,
-            0.03 => 0.3
+            -5,
+            -2,
+            0,
+            1,
+            6
         );
 
         $min = min( $raw );

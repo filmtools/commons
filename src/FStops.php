@@ -29,7 +29,7 @@ class FStops extends MinMaxArrayIterator implements FStopsInterface, FStopsProvi
     {
         $min = $this->min();
         return new Zones( array_map( function( $fstop ) use ($min) {
-            return $fstop + $min;
+            return $fstop + ($min * -1);
         }, $this->getArrayCopy()));
     }
 
