@@ -16,6 +16,8 @@ class MinMaxArrayIteratorTest extends \PHPUnit\Framework\TestCase
         $this->assertInstanceOf( \ArrayIterator::class, $sut );
         $this->assertInstanceOf( \Traversable::class, $sut );
 
+        $this->assertInstanceOf( \SplFixedArray::class, $sut->getRange());
+
     }
 
     /**
