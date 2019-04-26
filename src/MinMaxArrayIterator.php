@@ -30,7 +30,7 @@ class MinMaxArrayIterator extends \ArrayIterator implements MinMaxInterface
      */
     public function getRange( float $step = null) : \SplFixedArray
     {
-        $step = $step ?: $this->range_steps;
+        $step = is_null($step) ? $this->range_steps : $step;
         $min = mceil($this->min(), $step);
         $max = mfloor($this->max(), $step);
 
