@@ -11,8 +11,14 @@
 ## Installation
 
 ```bash
-$ composer require filmtools/commons
+// PHP 7.1+
+$ composer require filmtools/commons:^2.0
+
+// PHP 7.0
+$ composer require filmtools/commons:^1.0
 ```
+
+
 
 ## Development and Unit testing
 
@@ -21,7 +27,7 @@ $ git clone https://github.com/filmtools/commons.git
 $ composer install
 
 # either, or, and:
-$ composer phpunit
+$ composer test
 $ vendor/bin/phpunit
 
 ```
