@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "50af3841390673db511065f6218367c2",
+    "content-hash": "b27f8183434598aaf3849f2789de45b6",
     "packages": [
         {
             "name": "filmtools/mround",
@@ -2928,7 +2928,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.0"
+        "php": "^7.1"
     },
     "platform-dev": []
 }
