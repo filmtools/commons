@@ -4,6 +4,8 @@ namespace FilmTools\Commons;
 
 class Zones extends MinMaxArrayIterator implements ZonesInterface, ZonesProviderInterface
 {
+    use SearchableTrait;
+
     /**
      * @inheritDoc
      * @return $this
@@ -11,14 +13,6 @@ class Zones extends MinMaxArrayIterator implements ZonesInterface, ZonesProvider
     public function getZones() : ZonesInterface
     {
         return $this;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function search( float $zone )
-    {
-        return array_search($zone, $this->getArrayCopy());
     }
 
 
