@@ -20,16 +20,29 @@ class ExposuresTest extends \PHPUnit\Framework\TestCase
 
 
     /**
-     * @dataProvider provideValidCtorArguments
+     * @dataProvider provideStepWidths
      */
-    public function testExposuresProviderInterface( $data, $min, $max )
+    public function testRangeGetter( $step_width )
     {
-        $sut = new Exposures( $data );
-        $this->assertInstanceOf( ExposuresProviderInterface::class, $sut );
+        $sut = new Exposures( [-1, 0, 1] );
+        $range = $sut->getRange();
+        $this->assertInstanceOf( \SplFixedArray::class, $range);
 
-        $exposures = $sut->getExposures();
-        $this->assertInstanceOf( ExposuresInterface::class, $exposures );
+        $third = log10(2) / 3;
+        $this->assertEquals($third, $range[1] - $range[0]);
+
+        $range = $sut->getRange($step_width);
+        $this->assertEquals($step_width, $range[1] - $range[0]);
     }
+
+    public function provideStepWidths()
+    {
+        return array(
+            [ 0.25 ],
+            [ 0.5 ]
+        );
+    }
+
 
 
     /**

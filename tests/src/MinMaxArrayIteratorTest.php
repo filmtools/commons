@@ -16,9 +16,31 @@ class MinMaxArrayIteratorTest extends \PHPUnit\Framework\TestCase
         $this->assertInstanceOf( \ArrayIterator::class, $sut );
         $this->assertInstanceOf( \Traversable::class, $sut );
 
-        $this->assertInstanceOf( \SplFixedArray::class, $sut->getRange());
 
     }
+
+
+    /**
+     * @dataProvider provideStepWidths
+     */
+    public function testRangeGetter( $step_width )
+    {
+        $sut = new MinMaxArrayIterator( [-1, 0, 1] );
+        $range = $sut->getRange();
+        $this->assertInstanceOf( \SplFixedArray::class, $range);
+
+        $range = $sut->getRange($step_width);
+        $this->assertEquals($step_width, $range[1] - $range[0]);
+    }
+
+    public function provideStepWidths()
+    {
+        return array(
+            [ 0.25 ],
+            [ 0.5 ]
+        );
+    }
+
 
     /**
      * @dataProvider provideValidCtorArguments

@@ -37,6 +37,19 @@ class FStopsTest extends \PHPUnit\Framework\TestCase
     /**
      * @dataProvider provideValidCtorArguments
      */
+    public function testFStopsProviderInterface( $data, $min, $max )
+    {
+        $sut = new FStops( $data );
+        $this->assertInstanceOf( FStopsProviderInterface::class, $sut );
+        $this->assertEquals( $min, $sut->min() );
+
+        $zones = $sut->getFStops();
+        $this->assertInstanceOf( FStopsInterface::class, $zones );
+    }
+
+    /**
+     * @dataProvider provideValidCtorArguments
+     */
     public function testZonesProviderInterface( $data, $min, $max )
     {
         $sut = new FStops( $data );
