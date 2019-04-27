@@ -20,10 +20,11 @@ class MinMaxArrayIterator extends \ArrayIterator implements MinMaxInterface
 
     /**
      * Returns an range array from smallest to greatest exposure value.
-     * The default step width is a third of log10(2) and can be customized
+     * The default step width is 0.1 and can be customized
      * with an optional method parameter.
      *
-     * The minimum value is ceiled, and the maximum is floored.
+     * The minimum value is ceiled, and the maximum is floored,
+     * to the next multiple of the used step width.
      *
      * @param  float $step Optional: custom range step width
      * @return \SplFixedArray
