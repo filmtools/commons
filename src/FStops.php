@@ -4,6 +4,8 @@ namespace FilmTools\Commons;
 
 class FStops extends MinMaxArrayIterator implements FStopsInterface, FStopsProviderInterface
 {
+    use SearchableTrait;
+
     /**
      * @inheritDoc
      * @return $this
@@ -11,14 +13,6 @@ class FStops extends MinMaxArrayIterator implements FStopsInterface, FStopsProvi
     public function getFStops() : FStopsInterface
     {
         return $this;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function search( float $fstop )
-    {
-        return array_search($fstop, $this->getArrayCopy());
     }
 
 
