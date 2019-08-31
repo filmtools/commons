@@ -14,6 +14,7 @@ class ExposuresTest extends \PHPUnit\Framework\TestCase
     public function testValidCtorArguments( $data, $min, $max )
     {
         $sut = new Exposures( $data );
+        $this->assertInternalType("string", $sut->getUnit());
         $this->assertInstanceOf( ExposuresInterface::class, $sut );
         $this->assertInstanceOf( ExposuresProviderInterface::class, $sut );
     }

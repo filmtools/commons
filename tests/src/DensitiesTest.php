@@ -14,6 +14,7 @@ class DensitiesTest extends \PHPUnit\Framework\TestCase
     public function testValidCtorArguments( $data, $min, $max )
     {
         $sut = new Densities( $data );
+        $this->assertInternalType("string", $sut->getUnit());
         $this->assertInstanceOf( DensitiesInterface::class, $sut );
         $this->assertInstanceOf( DensitiesProviderInterface::class, $sut );
     }

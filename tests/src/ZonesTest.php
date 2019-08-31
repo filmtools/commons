@@ -16,6 +16,7 @@ class ZonesTest extends \PHPUnit\Framework\TestCase
     public function testValidCtorArguments( $data, $min, $max )
     {
         $sut = new Zones( $data );
+        $this->assertInternalType("string", $sut->getUnit());
         $this->assertInstanceOf( ZonesInterface::class, $sut );
         $this->assertInstanceOf( ZonesProviderInterface::class, $sut );
     }

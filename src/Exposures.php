@@ -2,10 +2,12 @@
 namespace FilmTools\Commons;
 
 
-class Exposures extends MinMaxArrayIterator implements ExposuresInterface, ExposuresProviderInterface
+class Exposures extends ValuesIterator implements ExposuresInterface, ExposuresProviderInterface
 {
 
     use SearchableTrait;
+
+    public $unit = 'logH';
 
     /**
      * @inheritDoc

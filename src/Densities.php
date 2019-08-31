@@ -2,9 +2,11 @@
 namespace FilmTools\Commons;
 
 
-class Densities extends MinMaxArrayIterator implements DensitiesInterface, DensitiesProviderInterface
+class Densities extends ValuesIterator implements DensitiesInterface, DensitiesProviderInterface
 {
     use SearchableTrait;
+
+    public $unit = 'logD';
 
     /**
      * @inheritDoc

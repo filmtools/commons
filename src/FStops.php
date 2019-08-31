@@ -2,9 +2,11 @@
 namespace FilmTools\Commons;
 
 
-class FStops extends MinMaxArrayIterator implements FStopsInterface, FStopsProviderInterface
+class FStops extends ValuesIterator implements FStopsInterface, FStopsProviderInterface
 {
     use SearchableTrait;
+
+    public $unit = 'fstop';
 
     /**
      * @inheritDoc

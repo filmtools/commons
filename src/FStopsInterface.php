@@ -2,7 +2,7 @@
 namespace FilmTools\Commons;
 
 
-interface FStopsInterface extends MinMaxInterface, ZonesProviderInterface, ExposuresProviderInterface, SearchableInterface
+interface FStopsInterface extends UnitsInterface, MinMaxInterface, ZonesProviderInterface, ExposuresProviderInterface, SearchableInterface
 {
 
 }

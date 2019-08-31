@@ -1,7 +1,7 @@
 <?php
 namespace FilmTools\Commons;
 
-interface DensitiesInterface extends MinMaxInterface, SearchableInterface
+interface DensitiesInterface extends UnitsInterface, MinMaxInterface, SearchableInterface
 {
 
 }

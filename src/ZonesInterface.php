@@ -2,7 +2,7 @@
 namespace FilmTools\Commons;
 
 
-interface ZonesInterface extends MinMaxInterface, ExposuresProviderInterface, SearchableInterface
+interface ZonesInterface extends UnitsInterface, MinMaxInterface, ExposuresProviderInterface, SearchableInterface
 {
 
 }
