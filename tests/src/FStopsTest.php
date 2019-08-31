@@ -18,6 +18,7 @@ class FStopsTest extends \PHPUnit\Framework\TestCase
     public function testValidCtorArguments( $data, $min, $max )
     {
         $sut = new FStops( $data );
+        $this->assertInternalType("string", $sut->getUnit());
         $this->assertInstanceOf( FStopsInterface::class, $sut );
         $this->assertInstanceOf( FStopsProviderInterface::class, $sut );
     }

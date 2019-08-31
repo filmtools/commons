@@ -2,9 +2,11 @@
 namespace FilmTools\Commons;
 
 
-class Zones extends MinMaxArrayIterator implements ZonesInterface, ZonesProviderInterface
+class Zones extends ValuesIterator implements ZonesInterface, ZonesProviderInterface
 {
     use SearchableTrait;
+
+    public $unit = 'zone';
 
     /**
      * @inheritDoc
